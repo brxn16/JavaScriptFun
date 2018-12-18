@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: #FF6543;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: #00F6F2;
+}
+</style>
+  <body>
+    <p>Please input a number between 1 and 10:</p>
+
+<input id="numb">
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+<br>
+<input id="add">
+
+<button type="button" onclick="addFunction()">Add</button>
+
+<input id="add2">
+
+<p id="answer"></p>
+<br>
+<button type="button" onclick="newPage()" >Click for a surprise;))))</button>
+<br><br>
+<br>
+<button onclick="myMove()">Make me Move</button>
+<br>
+<br>
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+<br><br>
+<button onclick="setTimeout(hiddenInsult, 7000);">Click for a Secret Message</button>
+<script>
+function myFunction() {
+  var x, text;
+
+  x = document.getElementById("numb").value;
+
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+function addFunction() {
+  var userInput1 = document.getElementById("add").value;
+  var userInput2 = document.getElementById("add2").value;
+  var answer = parseInt("userInput1") + parseInt("userInput2");
+
+  document.getElementById("answer").innerHTML = "Im not smart enough to do that, I'm sorry";
+}
+function newPage(){
+  window.location.assign("ThanosCar.html");
+}
+function myMove() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
+    }
+  }
+}
+function hiddenInsult() {
+  alert('You smell like cheeseeeeee');}
+</script>
+
+
+  </body>
+</html>
